@@ -76,7 +76,6 @@ Built the full analytics platform including USMLE gap analysis, PEV scores, pass
 - Building AI agents and MCP integrations at TiberHealth Innovation
 - Targeting **AI Engineer** and **Senior Software Engineer** roles
 - Open to remote and hybrid opportunities
-- H-1B visa status
 
 ---
 
