@@ -1,0 +1,64 @@
+name: Update Current Time
+
+on:
+  schedule:
+    # Runs every 30 minutes
+    - cron: "*/30 * * * *"
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  update-time:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytz
+        run: pip install pytz
+
+      - name: Update current time in README
+        run: |
+          python3 - <<'EOF'
+          from datetime import datetime
+          import pytz
+          import re
+
+          # St. Louis is in US/Central timezone
+          tz = pytz.timezone("America/Chicago")
+          now = datetime.now(tz)
+
+          # Format: Friday, April 25, 2025 at 10:42 AM CDT
+          time_str = now.strftime("%A, %B %d, %Y at %I:%M %p %Z")
+
+          with open("README.md", "r") as f:
+              content = f.read()
+
+          # Replace the time placeholder or previously set time
+          updated = re.sub(
+              r"(🕐 \*\*Current time in St\. Louis, MO:\*\* ).*",
+              f"\\g<1>{time_str}",
+              content
+          )
+
+          with open("README.md", "w") as f:
+              f.write(updated)
+
+          print(f"Updated time to: {time_str}")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "chore: update current St. Louis time"
+          git push
