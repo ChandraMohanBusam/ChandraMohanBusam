@@ -15,7 +15,7 @@ St. Louis, MO &nbsp;|&nbsp; +1 636-233-2009 &nbsp;|&nbsp; chandramohan.net@gmail
 
 ## About Me
 
-20+ years of production engineering experience in healthcare SaaS, now building AI agents and automation tools. I bring deep backend and infrastructure experience (.NET/C#, Azure, distributed systems) combined with hands-on AI engineering: LangChain agents, MCP servers, GPT-4o integration, RAG pipelines, and Python automation.
+20+ years of production engineering experience in healthcare SaaS, now building AI agents and MCP servers in production. I bring deep backend and infrastructure experience (.NET/C#, Azure, distributed systems) combined with hands-on AI engineering: LangChain agents, MCP servers, GPT-4o integration, RAG pipelines, and Python automation.
 
 I build AI systems that solve real operational problems, not demos. Every project here either runs in production or is directly derived from production work.
 
