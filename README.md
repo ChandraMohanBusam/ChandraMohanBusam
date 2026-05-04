@@ -9,10 +9,6 @@ St. Louis, MO &nbsp;|&nbsp; +1 636-233-2009 &nbsp;|&nbsp; chandramohan.net@gmail
 
 ---
 
-🕐 **Current time in St. Louis, MO:** Monday, May 04, 2026 at 09:39 AM CDT
-
----
-
 ## About Me
 
 I build production AI systems: LangChain agents, MCP servers, RAG pipelines, and GPT-4o integrations that solve real operational problems. Currently at Tiber Health Innovation, where every AI project here either runs in production or is directly derived from production work.
