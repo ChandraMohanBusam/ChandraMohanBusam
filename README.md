@@ -54,6 +54,14 @@ I build production AI systems: LangChain agents, MCP servers, LangGraph orchestr
 
 ---
 
+## 📊 GitHub Stats
+
+![Chandra's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ChandraMohanBusam&show_icons=true&theme=dark&hide_border=true&count_private=true)
+
+![Visitor Count](https://komarev.com/ghpvc/?username=ChandraMohanBusam&color=5B2D8E&style=flat&label=Profile+Views)
+
+---
+
 ## 🚀 AI Project Portfolio
 
 ---
@@ -160,8 +168,8 @@ Built the full analytics platform including USMLE gap analysis, PEV scores, pass
 
 I document real problems I solve, not tutorials. Recent LinkedIn posts:
 
+- **Multi-Agent LangGraph** - Five real agents, supervisor pattern, role-based tool scoping in a healthcare workflow
 - **MCP Composition Pattern** - Four servers, one LangGraph orchestrator, Redis coordination
-- **LangChain vs LangGraph** - Practical comparison from someone who has used both in production
 - **Debugging LangChain Agents** - Three levels: verbose, FileCallbackHandler, custom callbacks
 - **MCP Queue Monitor** - How I stopped opening a database client every morning
 - **AI Deployment Agent** - Replacing a 14-step deployment with a single natural language command
