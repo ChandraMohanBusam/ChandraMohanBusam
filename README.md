@@ -56,8 +56,6 @@ I build production AI systems: LangChain agents, MCP servers, LangGraph orchestr
 
 ## 📊 GitHub Stats
 
-![Chandra's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ChandraMohanBusam&show_icons=true&theme=dark&hide_border=true&count_private=true)
-
 ![Visitor Count](https://komarev.com/ghpvc/?username=ChandraMohanBusam&color=5B2D8E&style=flat&label=Profile+Views)
 
 ---
