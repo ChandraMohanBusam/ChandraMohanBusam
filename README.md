@@ -29,6 +29,7 @@ I build production AI systems: LangChain agents, MCP servers, LangGraph orchestr
 ![RAG](https://img.shields.io/badge/RAG-FF6B35?style=flat&logoColor=white)
 ![Pinecone](https://img.shields.io/badge/Pinecone-000000?style=flat&logoColor=white)
 ![Claude Desktop](https://img.shields.io/badge/Claude_Desktop-CC785C?style=flat&logoColor=white)
+![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-F5A800?style=flat&logo=opentelemetry&logoColor=black)
 
 ### Languages and Frameworks
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
@@ -78,6 +79,23 @@ FastMCP mount pattern with config-driven notification routing, Redis session mem
 **Stack:** FastMCP | LangGraph | Redis | Python | Docker | pytest
 
 [![View Repo](https://img.shields.io/badge/View-Repository-1a2744?style=flat&logo=github)](https://github.com/ChandraMohanBusam/mcp-composition-demo)
+
+---
+
+### 🔗 [arrivia-mcp-travel-recommendations](https://github.com/ChandraMohanBusam/arrivia-mcp-travel-recommendations)
+> MCP server for AI-agent-driven travel recommendations with partner rule enforcement, Redis session memory, structured logging, Bearer auth, and Docker Compose.
+
+A proof-of-concept AI Concierge service exposing 6 MCP tools and 3 prompt templates. Partner rules are enforced at the engine layer, keeping the MCP interface clean and enforcement logic independently testable. Optional Redis session memory stores tool results with a 1-hour TTL so agents can recall context without re-fetching. Bearer token auth on SSE transport for production deployments.
+
+**Key design decisions:**
+- Rule enforcement in the engine, not the MCP layer: testable without going through the MCP interface
+- Flat Redis key pattern `session:{session_id}:{tool_name}` for simple TTL management
+- Graceful degradation: server starts cleanly with no Redis configured, falls back to stateless mode
+- Mock service boundaries are clean interfaces: swapping in real HTTP clients requires changing only two files
+
+**Stack:** FastMCP | Python | Redis | Docker | pytest | Bearer Auth | Structured JSON Logging
+
+[![View Repo](https://img.shields.io/badge/View-Repository-1a2744?style=flat&logo=github)](https://github.com/ChandraMohanBusam/arrivia-mcp-travel-recommendations)
 
 ---
 
@@ -180,8 +198,8 @@ I document real problems I solve, not tutorials. Recent LinkedIn posts:
 
 - **20+ years** in .NET/C# and healthcare domain software
 - **Recent focus:** AI Engineering, MCP servers, LangChain/LangGraph, production observability
-- **Certifications:** SAFe 4 Agilist | Microsoft Certified Professional Web Apps C# .NET
-- **Education:** M.Sc Information Systems (Sri Krishnadevaraya University) | Bachelor of Computer Applications (BCA) (S.V. University)
+- **Certifications:** SAFe 4 Agilist | Microsoft Certified Professional Web Apps C# .NET | Hands-On AI: Building AI Agents with MCP and A2A (LinkedIn Learning, May 2026) | Mastering Observability with OpenTelemetry (LinkedIn Learning, May 2026)
+- **Education:** M.Sc Information Systems (Sri Krishnadevaraya University) | Bachelor of Computer Applications - BCA (S.V. University)
 
 ---
 
