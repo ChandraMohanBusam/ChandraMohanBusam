@@ -1,6 +1,6 @@
 # Hi, I'm Chandra Mohan Busam 👋
 
-**Principal Full Stack Engineer | AI Engineer**
+**Principal .NET Full Stack Engineer | AI Engineer**
 
 St. Louis, MO &nbsp;|&nbsp; +1 636-233-2009 &nbsp;|&nbsp; chandramohan.net@gmail.com
 
@@ -160,6 +160,27 @@ A local stdio MCP server connecting directly to Claude Desktop, giving conversat
 
 ---
 
+## 🏗️ Systems and Backend Engineering
+
+### 🔗 [event-ledger](https://github.com/ChandraMohanBusam/event-ledger)
+> A two-service .NET 10 financial event ledger: idempotent, out-of-order tolerant, traced end to end, resilient to outages, with a full observability stack.
+
+A public Event Gateway forwards transaction events to an internal Account Service over HTTP with W3C trace-context propagation and a Polly resilience pipeline. Demonstrates production microservices patterns at a reviewable scale.
+
+**Key design decisions:**
+- Forward-then-persist write path returns a clear 503 when the Account Service is down; outbox documented as the scaling path
+- Idempotency enforced by a unique key, holds under concurrent duplicate submissions
+- Balance computed on read from an immutable transaction log, so out-of-order events are correct by construction
+- Resilience via Polly standard handler: timeout, retry with backoff and jitter, circuit breaker, and a concurrency-limiter bulkhead
+- Observability: OpenTelemetry traces, metrics, and logs over OTLP, with Jaeger, Prometheus and Grafana, and the .NET Aspire Dashboard as interchangeable backends
+- Graceful degradation: reads keep working when the Account Service is down
+
+**Stack:** .NET 10 | C# | ASP.NET Core | SQLite | EF Core | OpenTelemetry | Jaeger | Prometheus | Grafana | Docker
+
+[![View Repo](https://img.shields.io/badge/View-Repository-1a2744?style=flat&logo=github)](https://github.com/ChandraMohanBusam/event-ledger)
+
+---
+
 ## 🎓 EdTech Projects
 
 ### MdTutor.ai RAG Pipeline
@@ -209,7 +230,6 @@ I document real problems I solve, not tutorials. Recent LinkedIn posts:
 - Exploring Agent-to-Agent (A2A) protocol for multi-agent coordination
 - Targeting **AI Engineer**, **Senior Software Engineer**, and **Lead Software Engineer** roles
 - Open to remote and hybrid opportunities
-- H-1B transfer required
 
 ---
 
@@ -221,5 +241,3 @@ I am actively looking for AI Engineer and Senior/Lead Software Engineer roles wh
 [![Email](https://img.shields.io/badge/Email-EA4335?style=flat&logo=gmail&logoColor=white)](mailto:chandramohan.net@gmail.com)
 
 📞 +1 636-233-2009
-
-> **Visa:** H-1B active. Requires employer-sponsored H-1B transfer. Not available for C2C or independent contracting.
