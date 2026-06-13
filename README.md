@@ -82,6 +82,23 @@ FastMCP mount pattern with config-driven notification routing, Redis session mem
 
 ---
 
+### 🔗 [mcp-dynamic-tool-loader](https://github.com/ChandraMohanBusam/mcp-dynamic-tool-loader)
+> **93% token reduction** by loading only the tools an agent needs, not all 17 at once.
+
+Three specialized FastMCP servers (Travel, Finance, Healthcare) expose 17 tools total. A LangGraph orchestrator inspects the incoming request and loads only the relevant server at runtime, dropping context from ~3,400 tokens per request to under 250. Demonstrates that selective tool loading is a viable production strategy for cost control in multi-domain agent deployments.
+
+**Key design decisions:**
+- Intent classifier routes to one of three domain servers before any tool call is made
+- Each server runs independently with its own Bearer token auth and structured JSON logging
+- LangGraph state tracks which server was loaded, enabling clean audit trails per session
+- Benchmark harness measures token count per request across both loading strategies for direct comparison
+
+**Stack:** FastMCP | LangGraph | Python | Docker | pytest | Bearer Auth | Structured JSON Logging
+
+[![View Repo](https://img.shields.io/badge/View-Repository-1a2744?style=flat&logo=github)](https://github.com/ChandraMohanBusam/mcp-dynamic-tool-loader)
+
+---
+
 ### 🔗 [arrivia-mcp-travel-recommendations](https://github.com/ChandraMohanBusam/arrivia-mcp-travel-recommendations)
 > MCP server for AI-agent-driven travel recommendations with partner rule enforcement, Redis session memory, structured logging, Bearer auth, and Docker Compose.
 
@@ -116,7 +133,7 @@ Three debugging levels for LangChain (verbose, FileCallbackHandler, custom callb
 ---
 
 ### 🔗 [ai-deployment-agent](https://github.com/ChandraMohanBusam/ai-deployment-agent)
-> Reduced a 14-step manual deployment process from 20-30 minutes to a single natural language command completing in under 2 minutes.
+> **14-step manual deployment, 20-30 minutes, reduced to a single natural language command completing in under 2 minutes.**
 
 A production-grade AI deployment agent accepting natural language commands from both a Slack slash command and a Claude MCP interface. Both interfaces share the same LangChain ReAct agent orchestrating deployment across multiple Linux servers via SSH.
 
@@ -205,6 +222,7 @@ Built the full analytics platform including USMLE gap analysis, PEV scores, pass
 
 I document real problems I solve, not tutorials. Recent LinkedIn posts:
 
+- **Is MCP Dead? Dynamic Tool Loading** - 17 tools, 3 servers, 93% token reduction with runtime intent-based routing
 - **Multi-Agent LangGraph** - Five real agents, supervisor pattern, role-based tool scoping in a healthcare workflow
 - **MCP Composition Pattern** - Four servers, one LangGraph orchestrator, Redis coordination
 - **Debugging LangChain Agents** - Three levels: verbose, FileCallbackHandler, custom callbacks
@@ -226,9 +244,9 @@ I document real problems I solve, not tutorials. Recent LinkedIn posts:
 
 ## Currently
 
+- Building production AI systems with MCP, LangGraph, and multi-agent orchestration patterns
+- Exploring Agent-to-Agent (A2A) protocol for multi-agent coordination, with a dedicated project in progress
 - Expanding RAG pipeline expertise: chunking strategies, OpenAI embeddings, Pinecone, retrieval optimization
-- Exploring Agent-to-Agent (A2A) protocol for multi-agent coordination
-- Targeting **AI Engineer**, **Senior Software Engineer**, and **Lead Software Engineer** roles
 - Open to remote and hybrid opportunities
 
 ---
